@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+  <h1>在客户端使用WebSocket</h1>
+  <script>
+  //创建socket，连接到服务器
+  var ws = 
+  new WebSocket('ws://127.0.0.1:9999' );
+  
+  //发送消息
+  //ws.send( 'hello' ); //客户端与服务器建立连接是需要一段时间，此时不能调用send
+  ws.onopen = function(){  //成功连接到服务器的回调函数
+	console.log('成功连接到WS服务器');
+	ws.send( 'hello' );
+	console.log('客户端发送消息完毕');
+  }
+  //接收消息
+  ws.onmessage = function(event){ 
+	console.log('接收到服务器的消息:')
+	console.log(event.data);
+  }
+  
+  </script>
+
+ </body>
+</html>

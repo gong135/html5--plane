@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+  <h1>读取localStorage数据</h1>
+  <hr>
+  <p id="num"></p>
+  <script>
+   //num.innerHTML = localStorage.getItem('number');
+
+   //为第2个页面绑定“localStorage”数据发生改变事件
+   window.onstorage = function(){
+	 num.innerHTML = localStorage.getItem('number');
+   }
+  </script>
+
+
+ </body>
+</html>

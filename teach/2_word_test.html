@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+  <h1>单词测试</h1>
+  <hr>
+  <script>
+  var score = 0;
+  //从本地存储中依次取出所有的先前保存的数据
+  for(var i=0; i<localStorage.length; i++){
+	var e = localStorage.key(i); //得到每个key
+	var c = localStorage.getItem(e); //得到每个value
+	var input = prompt('请输入 '+e+' 所对应的中文：');
+	if(input===c){
+		score++;
+		alert('答对了！');
+	}else {
+		alert('答错了！');
+	}
+  }
+
+  alert('总词汇量：'+localStorage.length+' 正确的词汇量：'+score);
+  </script>
+
+
+ </body>
+</html>

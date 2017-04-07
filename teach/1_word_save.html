@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+  <h1>保存单词</h1>
+  <hr>
+  英文：<input type="text" id="english"><br>
+  中文：<input type="text" id="chinese"><br>
+  <input id="btSave" type="button" value="保存生词">
+  <script>
+	btSave.onclick = function(){
+		var e = english.value;
+		var c = chinese.value;
+		//在客户端保存数据
+		localStorage.setItem(e, c);
+		
+		alert('生词保存成功！');
+		english.value='';
+		chinese.value='';
+	}
+  </script>
+
+  <hr>
+  <a href="2_word_test.html">开始测试</a>
+ </body>
+</html>

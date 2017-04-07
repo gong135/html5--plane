@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+
+ <body>
+  <h1>修改localStorage中的数据</h1>
+  <hr>
+  <button id="bt">增加计数器数字</button>
+
+  <script>
+  bt.onclick = function(){
+	var num = localStorage.getItem('number');
+	if(num===null){
+		num = 0;	
+	}else {
+		num = parseInt(num);
+	}
+	num++;
+	localStorage.setItem('number', num);
+  }
+  </script>
+ </body>
+</html>
